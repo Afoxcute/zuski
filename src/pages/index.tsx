@@ -2,6 +2,7 @@
 
 import type { NextPage } from "next";
 import { useAccount, useConnect } from 'wagmi';
+import { usePrivy } from '@privy-io/react-auth';
 import { injected } from 'wagmi/connectors';
 
 import Link from "next/link";
@@ -9,8 +10,8 @@ import { Gamepad2, Wallet, Sword, ScrollText, Shield, Coins, Trophy, Users } fro
 import Head from "next/head";
 
 const Home: NextPage = () => {
-    const { isConnected } = useAccount();
-      const { connect } = useConnect();
+    const { authenticated, ready } = usePrivy();
+      const { login } = usePrivy();
 
   return (
     <>
@@ -58,9 +59,9 @@ const Home: NextPage = () => {
 
           {/* CTA Button */}
           <div className='pt-4'>
-            {!isConnected ? (
+            {!authenticated ? (
               <button
-                onClick={() => connect({ connector: injected() })}
+                onClick={() => login()}
                 className='bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-4 px-8 rounded-lg w-full flex items-center justify-center space-x-2 hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-1'
               >
                 <Users className='w-5 h-5' />

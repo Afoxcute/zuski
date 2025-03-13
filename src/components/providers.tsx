@@ -15,7 +15,7 @@ const Provider = ({ children }: IProvider) => {
       appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID || ''}
       config={{
         appearance: {
-          theme: 'light',
+          theme: 'dark',
           accentColor: '#676FFF',
           logo: '/splashLogo.png',
           showWalletLoginFirst: true,
@@ -30,7 +30,7 @@ const Provider = ({ children }: IProvider) => {
         externalWallets: {
           solana: { connectors: solanaConnectors }
         },
-        solanaClusters: [{ name: 'mainnet-beta', rpcUrl: 'https://api.mainnet-beta.solana.com' }]
+        solanaClusters: [{ name: 'mainnet-beta', rpcUrl: 'https://api.devnet.solana.com' }]
       }}
     >
       {children}

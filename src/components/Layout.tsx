@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'; // Import useRouter
 import { Home, GamepadIcon, History } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useAccount } from 'wagmi';
+import { usePrivy } from '@privy-io/react-auth';
 import { toast } from 'react-hot-toast'; 
 import Image from 'next/image';
 // import Providers from './providers';
@@ -44,12 +45,12 @@ const NAV_ITEMS = [
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const pathname = usePathname();
-  const { isConnected } = useAccount();
+  const { authenticated, ready } = usePrivy();
   const router = useRouter(); // Initialize useRouter
 
 
   const handleLinkClick = (path: string) => {
-    if (!isConnected && path !== '/') {
+    if (!authenticated && path !== '/') {
       toast.error('Please connect your wallet to access this feature.'); // Show error message
     }
   };
@@ -90,7 +91,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 return (
                   <li key={path} className='flex-1'>
                     <Link
-                      href={isConnected || path === '/' ? path : '#'}
+                      href={authenticated || path === '/' ? path : '#'}
                       onClick={() => handleLinkClick(path)}
                       className={`flex flex-col items-center justify-center h-full transition-all duration-200 ${
                         isActive

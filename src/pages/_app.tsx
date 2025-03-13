@@ -16,16 +16,12 @@ const client = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={client}>
-        <RainbowKitProvider modalSize="wide">
+  <div>
           <Toaster position='top-right' reverseOrder={false} />
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </RainbowKitProvider>
-      </QueryClientProvider>
-      </WagmiProvider>
+          </div>
   );
 }
 
