@@ -1,0 +1,758 @@
+{
+    "address": "7yypKnJAZ9JjaemSA3A2Ha378sebeh6ciSvMy6pzHzdq",
+    "metadata": {
+      "name": "solarps",
+      "version": "0.1.0",
+      "spec": "0.1.0",
+      "description": "Created with Anchor"
+    },
+    "instructions": [
+      {
+        "name": "bet_sol",
+        "discriminator": [
+          68,
+          80,
+          170,
+          249,
+          187,
+          126,
+          97,
+          54
+        ],
+        "accounts": [
+          {
+            "name": "user",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "pyth_account"
+          },
+          {
+            "name": "global_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    71,
+                    76,
+                    79,
+                    66,
+                    65,
+                    76,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "global_state.admin",
+                  "account": "GlobalState"
+                }
+              ]
+            }
+          },
+          {
+            "name": "vault",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    86,
+                    65,
+                    85,
+                    76,
+                    84,
+                    95,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "user_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    85,
+                    83,
+                    69,
+                    82,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "user"
+                }
+              ]
+            }
+          },
+          {
+            "name": "system_program",
+            "address": "11111111111111111111111111111111"
+          },
+          {
+            "name": "rent",
+            "address": "SysvarRent111111111111111111111111111111111"
+          }
+        ],
+        "args": [
+          {
+            "name": "bet_amount",
+            "type": "u64"
+          },
+          {
+            "name": "check",
+            "type": "u64"
+          }
+        ]
+      },
+      {
+        "name": "coinflip",
+        "discriminator": [
+          190,
+          228,
+          143,
+          242,
+          188,
+          76,
+          12,
+          150
+        ],
+        "accounts": [
+          {
+            "name": "user",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "pyth_account"
+          },
+          {
+            "name": "global_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    71,
+                    76,
+                    79,
+                    66,
+                    65,
+                    76,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "global_state.admin",
+                  "account": "GlobalState"
+                }
+              ]
+            }
+          },
+          {
+            "name": "vault",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    86,
+                    65,
+                    85,
+                    76,
+                    84,
+                    95,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "treasury_account",
+            "writable": true
+          },
+          {
+            "name": "user_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    85,
+                    83,
+                    69,
+                    82,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "user"
+                }
+              ]
+            }
+          },
+          {
+            "name": "system_program",
+            "address": "11111111111111111111111111111111"
+          }
+        ],
+        "args": [
+          {
+            "name": "bet_amount",
+            "type": "u64"
+          }
+        ]
+      },
+      {
+        "name": "deposit_reward",
+        "discriminator": [
+          245,
+          216,
+          9,
+          179,
+          237,
+          49,
+          165,
+          181
+        ],
+        "accounts": [
+          {
+            "name": "user",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "global_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    71,
+                    76,
+                    79,
+                    66,
+                    65,
+                    76,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "global_state.admin",
+                  "account": "GlobalState"
+                }
+              ]
+            }
+          },
+          {
+            "name": "vault",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    86,
+                    65,
+                    85,
+                    76,
+                    84,
+                    95,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "system_program",
+            "address": "11111111111111111111111111111111"
+          }
+        ],
+        "args": [
+          {
+            "name": "deposit_amount",
+            "type": "u64"
+          }
+        ]
+      },
+      {
+        "name": "initialize",
+        "discriminator": [
+          175,
+          175,
+          109,
+          31,
+          13,
+          152,
+          155,
+          237
+        ],
+        "accounts": [
+          {
+            "name": "admin",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "global_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    71,
+                    76,
+                    79,
+                    66,
+                    65,
+                    76,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "admin"
+                }
+              ]
+            }
+          },
+          {
+            "name": "vault",
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    86,
+                    65,
+                    85,
+                    76,
+                    84,
+                    95,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "system_program",
+            "address": "11111111111111111111111111111111"
+          }
+        ],
+        "args": []
+      },
+      {
+        "name": "set_info",
+        "discriminator": [
+          213,
+          180,
+          130,
+          151,
+          202,
+          169,
+          231,
+          38
+        ],
+        "accounts": [
+          {
+            "name": "operator",
+            "writable": true,
+            "signer": true,
+            "relations": [
+              "global_state"
+            ]
+          },
+          {
+            "name": "global_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    71,
+                    76,
+                    79,
+                    66,
+                    65,
+                    76,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "global_state.admin",
+                  "account": "GlobalState"
+                }
+              ]
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "treasury_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury_fee",
+            "type": "u64"
+          },
+          {
+            "name": "locked",
+            "type": "bool"
+          }
+        ]
+      },
+      {
+        "name": "set_operator",
+        "discriminator": [
+          238,
+          153,
+          101,
+          169,
+          243,
+          131,
+          36,
+          1
+        ],
+        "accounts": [
+          {
+            "name": "admin",
+            "writable": true,
+            "signer": true,
+            "relations": [
+              "global_state"
+            ]
+          },
+          {
+            "name": "global_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    71,
+                    76,
+                    79,
+                    66,
+                    65,
+                    76,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "admin"
+                }
+              ]
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "new_operator",
+            "type": "pubkey"
+          }
+        ]
+      },
+      {
+        "name": "withdraw_all",
+        "discriminator": [
+          96,
+          246,
+          166,
+          130,
+          229,
+          50,
+          43,
+          70
+        ],
+        "accounts": [
+          {
+            "name": "admin",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "global_state",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    71,
+                    76,
+                    79,
+                    66,
+                    65,
+                    76,
+                    45,
+                    83,
+                    84,
+                    65,
+                    84,
+                    69,
+                    45,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "admin"
+                }
+              ]
+            }
+          },
+          {
+            "name": "vault",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    86,
+                    65,
+                    85,
+                    76,
+                    84,
+                    95,
+                    83,
+                    69,
+                    69,
+                    68
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "system_program",
+            "address": "11111111111111111111111111111111"
+          }
+        ],
+        "args": []
+      }
+    ],
+    "accounts": [
+      {
+        "name": "GlobalState",
+        "discriminator": [
+          163,
+          46,
+          74,
+          168,
+          216,
+          123,
+          133,
+          98
+        ]
+      },
+      {
+        "name": "UserState",
+        "discriminator": [
+          72,
+          177,
+          85,
+          249,
+          76,
+          167,
+          186,
+          126
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "code": 6000,
+        "name": "InvalidPriceFeed",
+        "msg": "Invalid Price Feed"
+      }
+    ],
+    "types": [
+      {
+        "name": "GlobalState",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "admin",
+              "type": "pubkey"
+            },
+            {
+              "name": "operator",
+              "type": "pubkey"
+            },
+            {
+              "name": "locked",
+              "type": "bool"
+            },
+            {
+              "name": "treasury_wallet",
+              "type": "pubkey"
+            },
+            {
+              "name": "treasury_fee",
+              "type": "u64"
+            },
+            {
+              "name": "win_percentage",
+              "type": {
+                "array": [
+                  "u16",
+                  3
+                ]
+              }
+            },
+            {
+              "name": "reward_policy_by_class",
+              "type": {
+                "array": [
+                  "u16",
+                  3
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "UserState",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "user",
+              "type": "pubkey"
+            },
+            {
+              "name": "reward_amount",
+              "type": "u64"
+            },
+            {
+              "name": "last_spinresult",
+              "type": "u8"
+            }
+          ]
+        }
+      }
+    ]
+  }
